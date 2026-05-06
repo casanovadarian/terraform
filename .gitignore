@@ -1,0 +1,20 @@
+.terraform
+localstack-data/
+volume/
+# Local terraform state
+*.tfstate
+*.tfstate.*
+
+# .terraform directory (donde están los providers pesados)
+.terraform/
+
+# .terraform.lock.hcl (opcional, algunos lo suben, otros no)
+#.terraform.lock.hcl
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Variables files
+*.tfvars
+*.tfvars.json

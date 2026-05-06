@@ -1,0 +1,16 @@
+services:
+  localstack:
+    container_name: localstack_main
+    # Usamos una versión específica estable
+    image: localstack/localstack:3.0
+    ports:
+      - "4566:4566"
+    environment:
+      - DEBUG=1
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      # Esta variable le dice a LocalStack que use solo el núcleo gratuito
+      - LOCALSTACK_API_KEY=
+      - ACTIVATE_PRO=0
+    volumes:
+      - "./volume:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
